@@ -13321,95 +13321,6 @@ Downloading: &#34;https://download.pytorch.org/models/densenet121-a639ec97.pth&#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">vgg16</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">model</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Downloading: &#34;https://download.pytorch.org/models/vgg16-397923af.pth&#34; to /root/.torch/models/vgg16-397923af.pth
-100%|██████████| 553433881/553433881 [00:04&lt;00:00, 121355164.73it/s]
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>VGG(
-  (features): Sequential(
-    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): ReLU(inplace)
-    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (3): ReLU(inplace)
-    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (6): ReLU(inplace)
-    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (8): ReLU(inplace)
-    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (11): ReLU(inplace)
-    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (13): ReLU(inplace)
-    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (15): ReLU(inplace)
-    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (18): ReLU(inplace)
-    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (20): ReLU(inplace)
-    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (22): ReLU(inplace)
-    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (25): ReLU(inplace)
-    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (27): ReLU(inplace)
-    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (29): ReLU(inplace)
-    (30): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (classifier): Sequential(
-    (0): Linear(in_features=25088, out_features=4096, bias=True)
-    (1): ReLU(inplace)
-    (2): Dropout(p=0.5)
-    (3): Linear(in_features=4096, out_features=4096, bias=True)
-    (4): ReLU(inplace)
-    (5): Dropout(p=0.5)
-    (6): Linear(in_features=4096, out_features=1000, bias=True)
-  )
-)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -13484,38 +13395,6 @@ Downloading: &#34;https://download.pytorch.org/models/densenet121-a639ec97.pth&#
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># epochs = 5</span>
-<span class="c1"># for e in range(epochs):</span>
-<span class="c1">#     running_loss = 0</span>
-<span class="c1">#     for images, labels in trainloader:</span>
-        
-<span class="c1">#         images, labels = images.to(device), labels.to(device)</span>
-<span class="c1">#         # Flatten MNIST images into a 784 long vector</span>
-<span class="c1"># #         images = images.view(images.shape[0], -1)</span>
-    
-<span class="c1">#         # TODO: Training pass</span>
-<span class="c1">#         optimizer.zero_grad()</span>
-        
-<span class="c1">#         output = model(images)</span>
-<span class="c1">#         loss = criterion(output, labels)</span>
-<span class="c1">#         loss.backward()</span>
-<span class="c1">#         optimizer.step()</span>
-        
-<span class="c1">#         running_loss += loss.type(torch.FloatTensor).item()</span>
-<span class="c1"># #     else:</span>
-<span class="c1">#         print(f&quot;Training loss: {running_loss/len(trainloader)}&quot;)</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -14385,7 +14264,7 @@ Epoch 3/3 | Train loss: 0.740 | Valid loss: 0.532 | Valid accuracy: 0.861
 <span class="sd">        returns an Numpy array</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">transposed_image</span> <span class="o">=</span> <span class="n">normalized_image</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">transposed_image</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">transposed_image</span>
 </pre></div>
 
@@ -14528,12 +14407,6 @@ Epoch 3/3 | Train loss: 0.740 | Valid loss: 0.532 | Valid accuracy: 0.861
     
     <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
     
-<span class="c1">#     np_image = process_image(image)</span>
-    
-<span class="c1">#     tensor_image = torch.from_numpy(np_image).type(torch.FloatTensor)</span>
-<span class="c1">#     tensor_image = tensor_image.unsqueeze(dim=0)</span>
-    
-<span class="c1">#     tensor_image = tensor_image.to(device)</span>
     <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
         <span class="n">image</span> <span class="o">=</span> <span class="n">process_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
@@ -14755,19 +14628,6 @@ float64
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO remove .pth files or move it to a temporary `~/opt` directory in this Workspace</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
